@@ -15,23 +15,24 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           title: const Text('Flutter is Fun!'),
         ),
-        body: Stack(
-          children: [
-            Container(
-              color: Colors.red,
-              width: 100,
-              height: 100,
-            ),
-            Positioned(
-              child: Icon(Icons.verified),
-              top: 25,
-              left: 25,
-            ),
-            // Align(
-            //   child: Icon(Icons.verified),
-            //   alignment: Center,
-            // ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.lightBlue,
+          foregroundColor: Colors.white,
+          child: Icon(Icons.add),
+          onPressed: () {
+            print('Pressed');
+          },
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.business), label: 'Business'),
+            BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School')
           ],
+        ),
+        drawer: Drawer(
+          child: Text('Hello there'),
         ),
       ),
     );
